@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 
 class CityForm extends Component {
+
+    // we need the local state in the new form because this state doesn't to be known from other components
+    state = {
+        name: "",
+        country: "",
+        image: "",
+        summary: "",
+        content: "",
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+
+    }
+
     render(){
         return(
             <div id="city-form">    

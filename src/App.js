@@ -1,5 +1,6 @@
 import './App.css';
-import Homepage from './components/Homepage'
+import Homepage from './components/Homepage';
+import CityForm from './components/CityForm';
 
 function App() {
   return (

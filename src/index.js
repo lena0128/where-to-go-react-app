@@ -5,9 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import cityReducer from './reducers/cityReducer';
 
 // three arguments - 1. reducer 2. preloaded state 3. enhancer
-const store = createStore(() => {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(cityReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+console.log(store.getState())
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
