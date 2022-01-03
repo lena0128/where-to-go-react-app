@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class CityForm extends Component {
 
@@ -18,10 +19,25 @@ class CityForm extends Component {
 
     }
 
+    handleSubmit = (e) => {
+        e.preventDefult()
+
+        // we need to find a way to send this city object to the reducer
+        this.props.addCity() 
+
+        this.setState({
+            name: "",
+            country: "",
+            image: "",
+            summary: "",
+            content: "",
+        })
+    }
+
     render(){
         return(
             <div id="city-form">    
-                <form>
+                <form onSubmit={this.handleSubmit} >
                     <h3>Add a New City</h3>
                     <div>
                         <label htmlFor="name">Name: </label>
@@ -29,24 +45,24 @@ class CityForm extends Component {
                     </div>
 
                     <div>
-                        <label htmlFor="country">Name: </label>
+                        <label htmlFor="country">Country: </label>
                         <input type="text" id="country" name="country" value={this.state.country} onChange={this.handleChange} />
                     </div>
 
                     <div>
-                        <label htmlFor="image">Name: </label>
+                        <label htmlFor="image">Image URL: </label>
                         <input type="text" id="image" name="image" value={this.state.image} onChange={this.handleChange} />
                     </div>
 
                     <div>
-                        <label htmlFor="summary">Name: </label>
+                        <label htmlFor="summary">Summary: </label>
                         <input type="text" id="summary" name="summary" value={this.state.summary} onChange={this.handleChange} />
                     </div>
 
                     <div>
-                        <label htmlFor="content">Name: </label>
+                        <label htmlFor="content">Content: </label>
                         <input type="text" id="content" name="content" value={this.state.content} onChange={this.handleChange} />
-                    </div>
+                    </div><br />
 
                     <div>
                         <input type="submit" value="Create" />
@@ -57,4 +73,11 @@ class CityForm extends Component {
     }
 }
 
-export default CityForm
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addCity: (cityObj) => dispatch(addCity(cityObj)) 
+    }
+
+}
+
+export default connect(null, mapDispatchToProps)(CityForm)

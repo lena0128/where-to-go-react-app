@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <h1>Welcome to Where to Trvel App!</h1>
       <Homepage />
+      <CityForm />
     </div>
   );
 }
