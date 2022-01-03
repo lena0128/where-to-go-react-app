@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addCity } from '../actions/cityActions'
 
 class CityForm extends Component {
 
@@ -20,10 +21,12 @@ class CityForm extends Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefult()
+        e.preventDefault()
 
         // we need to find a way to send this city object to the reducer
-        this.props.addCity() 
+        this.props.addCity(this.state) 
+
+        console.log(this.state)
 
         this.setState({
             name: "",
@@ -75,7 +78,7 @@ class CityForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addCity: (cityObj) => dispatch(addCity(cityObj)) 
+        addCity: (cityObj) => dispatch(addCity(cityObj))
     }
 
 }
