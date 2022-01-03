@@ -9,6 +9,7 @@ class CityList extends Component {
         key={idx} 
         name={city.name}
         country={city.country} 
+        image={city.image}
         />)
         
         return(

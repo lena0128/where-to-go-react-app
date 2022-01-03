@@ -2,8 +2,9 @@
 const CityCard = (props) => {
     return(
         <div className="city-card">
-            <h3>Hello!</h3>
-           <h3>{props.name}</h3>    
+           <img src={props.image} alt={props.name} />
+           <h3>{props.name}, {props.country}</h3>
+           <h5>Read More(add a link later)</h5>    
         </div>
     )
 }

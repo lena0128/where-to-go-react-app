@@ -26,7 +26,6 @@ class CityForm extends Component {
         // we need to find a way to send this city object to the reducer
         this.props.addCity(this.state) 
 
-        console.log(this.state)
 
         this.setState({
             name: "",
@@ -76,6 +75,8 @@ class CityForm extends Component {
     }
 }
 
+// dispatch is how we connect to our reducer
+// dispatch(action) is how we pass our action
 const mapDispatchToProps = (dispatch) => {
     return {
         addCity: (cityObj) => dispatch(addCity(cityObj))
