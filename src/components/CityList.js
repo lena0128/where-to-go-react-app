@@ -13,7 +13,7 @@ class CityList extends Component {
         />)
         
         return(
-            <div className="row-list">
+            <div className="city-list">
                 {cities}
             </div>
         )
@@ -21,6 +21,7 @@ class CityList extends Component {
 
 }
 
+// this function allows us to get the state from the store and map it to our props
 const mapStateToProps = (stateFromStore) => {
     return {
         cities: stateFromStore.cities

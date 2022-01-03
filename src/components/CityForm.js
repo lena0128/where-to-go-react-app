@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addCity } from '../actions/cityActions'
+import { createCity } from '../actions/cityActions'
 
 class CityForm extends Component {
 
@@ -24,7 +24,7 @@ class CityForm extends Component {
         e.preventDefault()
 
         // we need to find a way to send this city object to the reducer
-        this.props.addCity(this.state) 
+        this.props.createCity(this.state) 
 
 
         this.setState({
@@ -79,7 +79,7 @@ class CityForm extends Component {
 // dispatch(action) is how we pass our action
 const mapDispatchToProps = (dispatch) => {
     return {
-        addCity: (cityObj) => dispatch(addCity(cityObj))
+        createCity: (cityObj) => dispatch(createCity(cityObj))
     }
 
 }
