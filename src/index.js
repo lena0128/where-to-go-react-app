@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import cityReducer from './reducers/cityReducer';
 import thunk from 'redux-thunk';
 
+
 // three arguments - 1. reducer 2. preloaded state 3. enhancer
 const store = createStore(cityReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 

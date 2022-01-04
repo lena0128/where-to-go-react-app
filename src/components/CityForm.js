@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createCity } from '../actions/cityActions'
+import { createCity } from '../actions/cityActions';
+import { Redirect } from 'react-router-dom';
 
 class CityForm extends Component {
 
@@ -11,6 +12,7 @@ class CityForm extends Component {
         image: "",
         summary: "",
         content: "",
+        redirect: false
     }
 
     handleChange = (e) => {
@@ -33,6 +35,7 @@ class CityForm extends Component {
             image: "",
             summary: "",
             content: "",
+            redirect: true
         })
     }
 
@@ -73,6 +76,7 @@ class CityForm extends Component {
 
                 <div><button onClick={() => this.props.goBack()}>GO BACK</button></div>
 
+                <div>{ this.state.redirect ? <Redirect to="/cities" /> : false }</div>
             </div>
         )
     }

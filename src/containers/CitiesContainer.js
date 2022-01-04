@@ -34,11 +34,11 @@ class CitiesContainer extends Component {
                     return <CityForm goBack={() => routeInfo.history.push("/")} /> 
                  }} />
 
-                <Route exact path="/cities" render={(routeInfo) => 
+                <Route exact path="/cities" component={(routeInfo) => 
                     <>
                     <CityFilter search={this.state.search} handleInputChange={this.handleInputChange} goBack={() => routeInfo.history.push("/")}/>
 
-                    {this.props.loading ? <Loading /> : <CityList foundCity={foundCity} searchTerm={this.state.search} /> }
+                    {this.props.loading ? <Loading /> : <CityList cities={this.props.cities} foundCity={foundCity} searchTerm={this.state.search} /> }
                     </>
                 }>
                   
