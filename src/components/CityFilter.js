@@ -1,30 +1,13 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import CityPage from './CityPage';
 
-class CityFilter extends Component {
-
-    // state = {
-    //     search: ""
-    //   }
- 
-    // handleInputChange = (e) => {
-    //     this.setState({
-    //         search: e.target.value
-    //     })
-    // }  
-
-
-    render(){
-        // const filterCity = this.props.cities.find((city) => city.name === this.state.search)
+function CityFilter(props) {
 
         return(
             <div id="city-filter" >
-                <input type="text" placeholder="Search for a city..." onChange={this.props.handleInputChange} />
-                {this.props.search.length > 4 ? <button onClick={() => this.props.goBack()}>GO BACK</button> : "" }
+                <input type="text" placeholder="Search for a city..." onChange={props.handleInputChange} />
+                {props.search.length > 4 ? <button onClick={() => props.goBack()}>GO BACK</button> : "" }
             </div>
         )
-    }
 }
 
 export default CityFilter

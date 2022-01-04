@@ -8,6 +8,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import GuidesContainer from './containers/GuidesContainer';
 
 
 class App extends Component {
@@ -28,8 +29,7 @@ class App extends Component {
 
               <Route path="/cities" component={() => <CitiesContainer />}/>
           
-              <Route path="/" component={()=><Homepage />}></Route>
-              
+              <Route path='/guides' component={() => <GuidesContainer />} />
 
             </Switch>
         </Router>
