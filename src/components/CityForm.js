@@ -38,8 +38,8 @@ class CityForm extends Component {
 
     render(){
         return(
-            <div id="city-form">    
-                <form onSubmit={this.handleSubmit} >
+            <div>    
+                <form onSubmit={this.handleSubmit} id="city-form">
                     <h3>Add a New City</h3>
                     <div>
                         <label htmlFor="name">Name: </label>
@@ -70,6 +70,9 @@ class CityForm extends Component {
                         <input type="submit" value="Create" />
                     </div>
                 </form>
+
+                <div><button onClick={() => this.props.goBack()}>GO BACK</button></div>
+
             </div>
         )
     }

@@ -21,6 +21,7 @@ class CityFilter extends Component {
         return(
             <div id="city-filter" >
                 <input type="text" placeholder="Search for a city..." onChange={this.props.handleInputChange} />
+                {this.props.search.length > 4 ? <button onClick={() => this.props.goBack()}>GO BACK</button> : "" }
             </div>
         )
     }

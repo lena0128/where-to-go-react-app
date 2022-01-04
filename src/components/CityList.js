@@ -7,7 +7,8 @@ class CityList extends Component {
 
     render(){
         const cities = this.props.cities.map((city, idx) => <CityCard 
-        key={idx} 
+        key={idx}
+        id={city.id} 
         name={city.name}
         country={city.country} 
         image={city.image}
@@ -16,8 +17,11 @@ class CityList extends Component {
         return(
             <div className="city-list">
                 <div id="found-city">{ this.props.foundCity ? <CityCard 
+                id={this.props.foundCity.id}
                 name={this.props.foundCity.name}
-                image={this.props.foundCity.image} 
+                country={this.props.foundCity.country}
+                image={this.props.foundCity.image}
+
                 /> : cities }</div>
                 
             </div>

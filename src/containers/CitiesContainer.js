@@ -6,6 +6,7 @@ import { fetchCities } from '../actions/cityActions';
 import Loading from '../components/Loading';
 import { Switch, Route } from 'react-router-dom';
 import CityForm from '../components/CityForm';
+import CityPage from '../components/CityPage';
 
 class CitiesContainer extends Component {
 
@@ -29,12 +30,22 @@ class CitiesContainer extends Component {
         return(
             <div id="cities-container">
               <Switch>
-                <Route exact path="/cities/new" component={() => <CityForm />} />
+                <Route exact path="/cities/new" component={(routeInfo) => { 
+                    console.log(routeInfo)
+                
+                    return <CityForm goBack={() => routeInfo.history.push("/")} /> 
+                 }} />
 
-                <Route exact path="/cities">
-                   <CityFilter search={this.state.search} handleInputChange={this.handleInputChange} />
-                   { this.props.loading ? <Loading /> : <CityList foundCity={foundCity} searchTerm={this.state.search} /> }
+                <Route exact path="/cities" render={(routeInfo) => 
+                    <>
+                    <CityFilter search={this.state.search} handleInputChange={this.handleInputChange} goBack={() => routeInfo.history.push("/")}/>
+
+                    {this.props.loading ? <Loading /> : <CityList foundCity={foundCity} searchTerm={this.state.search} /> }
+                    </>
+                }>
+                  
                 </Route>
+
               
               </Switch>
             </div>

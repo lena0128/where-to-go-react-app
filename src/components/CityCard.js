@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Link } from 'react-router-dom';
 
 function CityCard(props){
 
@@ -6,7 +7,7 @@ function CityCard(props){
         <div className="city-card">
            <img src={props.image} alt={props.name} />
            <h3>{props.name}, {props.country}</h3>
-           <h5>Read More(add a link later)</h5>
+           <Link to={`/cities/${props.id}`}>Read More</Link>
         </div>
     )
 }
