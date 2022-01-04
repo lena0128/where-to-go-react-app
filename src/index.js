@@ -12,15 +12,14 @@ import thunk from 'redux-thunk';
 const store = createStore(cityReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode>  
   <Provider store={store}>
-    <App />
+      <App />
   </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-console.log(store.getState())
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

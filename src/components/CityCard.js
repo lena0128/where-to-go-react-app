@@ -1,6 +1,7 @@
+import React from 'react'; 
 
+function CityCard(props){
 
-const CityCard = (props) => {
     return(
         <div className="city-card">
            <img src={props.image} alt={props.name} />

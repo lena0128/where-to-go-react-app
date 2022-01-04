@@ -70,15 +70,15 @@
 .city-card {
   display: inline-block;
   margin: 10px;
-  width:250px;
+  width:350px;
   height: 350px;
   color: #282c34;
   border: 1px solid #5d6472;
 }
 
 .city-card img {
-  width: 250px;
-  height: 200px;
+  width: 350px;
+  height: 220px;
 
 }
 
