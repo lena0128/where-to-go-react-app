@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return(
-        <div id="nav-bar">
-            <Link to="/cities">
-              <button id="cities">Cities</button>
+        <ul id="nav-bar">
+            <Link to="/cities" className="nav-link">
+              <li id="cities">Cities</li>
             </Link> 
 
-            <Link to="/cities/new">
-              <button id="new-city">Add a City</button>
+            <Link to="/cities/new" className="nav-link">
+              <li id="new-city">Add a City</li>
             </Link>
 
-            <Link to="/home">
-                <button id="home-page">Home</button>
+            <Link to="/home" className="nav-link">
+                <li id="home-page">Home</li>
             </Link>   
-        </div>
+        </ul>
     )
 
 }

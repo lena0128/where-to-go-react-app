@@ -88,3 +88,31 @@
   padding-bottom: 40px;
   background: rgba(0,0,0,0.02);
 }
+
+#nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.nav-link {
+  float: left;
+}
+
+.nav-link {
+  display: block;
+  color: #FBBF29;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: #111;
+}
+

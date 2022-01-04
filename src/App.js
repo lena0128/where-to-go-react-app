@@ -17,8 +17,8 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Homepage />
           <Navbar />
+          <Homepage />
         <CitiesContainer />
         </Router>
       </div>
