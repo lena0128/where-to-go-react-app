@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: Open Sans, Arial, sans-serif;
 }
 
 .body {
@@ -51,7 +52,7 @@
   background-size:cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 30vh;
+  height: 90vh;
 }
 
 #city-form {
@@ -116,3 +117,6 @@
   background-color: #111;
 }
 
+#city-filter {
+  padding: 1rem;
+}

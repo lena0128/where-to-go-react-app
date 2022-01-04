@@ -2,9 +2,11 @@
 
 const Homepage = () => {
    return(
+       <>
+       <h1>Welcome to Where to Travel App!</h1>
        <div id="homepage">
-           <h1>Welcome to Where to Trvel App!</h1>
        </div>
+       </>
    )
 }
 

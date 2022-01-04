@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import CityFilter from '../components/CityFilter';
 import CityList from '../components/CityList';
-import CityForm from '../components/CityForm';
 import { connect } from 'react-redux';
 import { fetchCities } from '../actions/cityActions';
 import Loading from '../components/Loading';
+import { Switch, Route } from 'react-router-dom';
+import CityForm from '../components/CityForm';
 
 class CitiesContainer extends Component {
 
@@ -27,9 +28,15 @@ class CitiesContainer extends Component {
         const foundCity = this.props.cities.find((city) => city.name.toLowerCase() === this.state.search.toLowerCase())
         return(
             <div id="cities-container">
-            <CityForm />
-            <CityFilter search={this.state.search} handleInputChange={this.handleInputChange} />
-            { this.props.loading ? <Loading /> : <CityList foundCity={foundCity} searchTerm={this.state.search} /> }
+              <Switch>
+                <Route exact path="/cities/new" component={() => <CityForm />} />
+
+                <Route exact path="/cities">
+                   <CityFilter search={this.state.search} handleInputChange={this.handleInputChange} />
+                   { this.props.loading ? <Loading /> : <CityList foundCity={foundCity} searchTerm={this.state.search} /> }
+                </Route>
+              
+              </Switch>
             </div>
         )
     }
