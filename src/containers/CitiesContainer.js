@@ -31,8 +31,6 @@ class CitiesContainer extends Component {
             <div id="cities-container">
               <Switch>
                 <Route exact path="/cities/new" component={(routeInfo) => { 
-                    console.log(routeInfo)
-                
                     return <CityForm goBack={() => routeInfo.history.push("/")} /> 
                  }} />
 
@@ -44,6 +42,15 @@ class CitiesContainer extends Component {
                     </>
                 }>
                   
+                </Route>
+
+                <Route path="/cities/:id" component={(routeInfo) => {
+                    console.log(routeInfo)
+                    const paramsId = parseInt(routeInfo.match.params.id) 
+                    const singleCity = this.props.cities.find((city) => city.id === paramsId)
+                    return <CityPage city={singleCity} />
+                }}>
+
                 </Route>
 
               

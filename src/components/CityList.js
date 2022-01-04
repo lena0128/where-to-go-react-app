@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CityCard from './CityCard';
 import { connect } from 'react-redux';
-import cityReducer from '../reducers/cityReducer';
 
 class CityList extends Component {
 
@@ -16,11 +15,12 @@ class CityList extends Component {
         
         return(
             <div className="city-list">
-                <div id="found-city">{ this.props.foundCity ? <CityCard 
+                <div>{ this.props.foundCity ? <CityCard 
                 id={this.props.foundCity.id}
                 name={this.props.foundCity.name}
                 country={this.props.foundCity.country}
                 image={this.props.foundCity.image}
+                goBack={this.props.foundCity.goBack}
 
                 /> : cities }</div>
                 

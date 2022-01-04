@@ -6,10 +6,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import CityForm from './components/CityForm';
+
 
 class App extends Component {
 
@@ -27,7 +26,7 @@ class App extends Component {
 
             <Switch>
 
-              <Route path="/cities" component={() => <CitiesContainer />} />
+              <Route path="/cities" component={() => <CitiesContainer />}/>
           
               <Route path="/" component={()=><Homepage />}></Route>
               

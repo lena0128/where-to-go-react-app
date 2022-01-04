@@ -17,7 +17,7 @@ const Navbar = () => {
               <li id="new-city">New City</li>
             </Link>
 
-                <img src="https://logodix.com/logo/585455.png" style={{width: "30px", float: "right", padding: "12px"}} />   
+                <img src="https://logodix.com/logo/585455.png" alt="mockup logo" style={{width: "30px", float: "right", padding: "12px"}} />   
         </ul>
     )
 

@@ -120,3 +120,8 @@
 #city-filter {
   padding: 1rem;
 }
+
+#city-page {
+  width: 60%;
+  margin: auto;
+}
