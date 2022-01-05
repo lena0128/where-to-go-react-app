@@ -12,7 +12,8 @@ class CityForm extends Component {
         image: "",
         summary: "",
         content: "",
-        redirect: false
+        redirect: false, 
+        likes: 0
     }
 
     handleChange = (e) => {

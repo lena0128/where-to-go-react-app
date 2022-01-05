@@ -20,6 +20,7 @@ class CitiesContainer extends Component {
         })
     }  
 
+
     componentDidMount(){
         this.props.fetchCities();
     }
@@ -38,7 +39,7 @@ class CitiesContainer extends Component {
                     <>
                     <CityFilter search={this.state.search} handleInputChange={this.handleInputChange} goBack={() => routeInfo.history.push("/")}/>
 
-                    {this.props.loading ? <Loading /> : <CityList cities={this.props.cities} foundCity={foundCity} searchTerm={this.state.search} /> }
+                    {this.props.loading ? <Loading /> : <CityList cities={this.props.cities} foundCity={foundCity} /> }
                     </>
                 }>
                   

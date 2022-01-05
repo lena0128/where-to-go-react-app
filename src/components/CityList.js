@@ -17,7 +17,7 @@ function CityList(props) {
                 name={props.foundCity.name}
                 country={props.foundCity.country}
                 image={props.foundCity.image}
-                goBack={props.foundCity.goBack}
+
 
                 /> : cities }</div>
                 

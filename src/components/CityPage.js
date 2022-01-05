@@ -5,7 +5,7 @@ const CityPage = (props) => {
         <div id="city-page">
             <h1>{props.city.name}, {props.city.country}</h1>
             <img src={props.city.image} alt={props.city.name} />
-            <aside class="pquote">
+            <aside className="pquote">
                <blockquote>
                    <p>{props.city.summary}</p>
                </blockquote>

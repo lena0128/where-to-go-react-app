@@ -1,8 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 
-function CityCard(props){
-
+function CityCard(props) {
     return(
         <div className="city-card">
            <img src={props.image} alt={props.name} />
@@ -12,4 +11,4 @@ function CityCard(props){
     )
 }
 
-export default CityCard
+export default CityCard;
